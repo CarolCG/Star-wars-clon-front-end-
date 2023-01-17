@@ -1,0 +1,18 @@
+.scrollable {
+    overflow-x: scroll;
+    min-height: 420px;
+}
+
+.scrollable::-webkit-scrollbar {
+    height: 10px;
+    background-color: rbg(33, 37, 41);
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+    background-color: rgb(141, 141, 141);
+    border-radius: 9px;
+}
+
+.scrollable::-webkit-scrollbar-corner {
+    display: none;
+}
