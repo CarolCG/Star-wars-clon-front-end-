@@ -9,14 +9,14 @@ export const Navbar = () => {
 			<img className="bg-black " id="local-nav-logo-desktop" src="https://w7.pngwing.com/pngs/792/718/png-transparent-skellig-michael-chewbacca-star-wars-computer-icons-star-wars-text-logo-desktop-wallpaper.png" alt="Star Wars Logo" style={{width:"70px"}}/>
 			</Link>
 			<Link to="/demo">
-				<div class="dropdown d-flex">
-  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<div className="dropdown d-flex">
+  <button className="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Favourite
   </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-    <button class="dropdown-item" type="button">Action</button>
-    <button class="dropdown-item" type="button">Another action</button>
-    <button class="dropdown-item" type="button">Something else here</button>
+  <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
+    <button className="dropdown-item" type="button">Action</button>
+    <button className="dropdown-item" type="button">Another action</button>
+    <button className="dropdown-item" type="button">Something else here</button>
   </ul>
 </div>				
 </Link>
