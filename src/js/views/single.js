@@ -19,29 +19,29 @@ export const Single = props => {
 		.then(data => setCharacters(data))
 		.catch(err => console.error(err))
 	}
-	function obtenerInformationDePlanet(){
-		fetch("https://swapi.dev/api/planets/"+params.theid)
-        .then(res => res.json())
-        .then(data => setPlanet(data))
-        .catch(err => console.error(err))
-	}
-	function obtenerInformationDeVehicle(){
-		fetch("https://swapi.dev/api/vehicles/"+params.theid)
-		.then(res => res.json())
-		.then(data => setVehicle(data))
-		.catch(err => console.error(err))
-	}
+	// function obtenerInformationDePlanet(){
+	// 	fetch("https://swapi.dev/api/planets/"+params.theid)
+    //     .then(res => res.json())
+    //     .then(data => setPlanet(data))
+    //     .catch(err => console.error(err))
+	// }
+	// function obtenerInformationDeVehicle(){
+	// 	fetch("https://swapi.dev/api/vehicles/"+params.theid)
+	// 	.then(res => res.json())
+	// 	.then(data => setVehicle(data))
+	// 	.catch(err => console.error(err))
+	// }
 
 	useEffect(()=>{
 		obtenerInformationDeCharacter();
 	},[])
-	useEffect(()=>{
-		obtenerInformationDePlanet();
-	},[])
+	// useEffect(()=>{
+	// 	obtenerInformationDePlanet();
+	// },[])
 
-	useEffect(()=>{
-		obtenerInformationDeVehicle();
-	},[])
+	// useEffect(()=>{
+	// 	obtenerInformationDeVehicle();
+	// },[])
 	let id=params.theid;
 	return (
 		<>

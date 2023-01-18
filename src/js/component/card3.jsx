@@ -13,7 +13,7 @@ return (
         <p className="card-text">Consumable: {props.consumo}</p>
         <p className="card-text">Creado en: {props.creado}</p>
 		<div className="d-flex justify-content-between">
-		<Link type="button" className="btn btn-outline-primary" to={"/single/"+ id}>Learn More</Link>
+		<Link type="button" className="btn btn-outline-primary" to={"/singleVehicle/"+ id}>Learn More</Link>
 		<Link type="button" className="btn btn-outline-warning "><i className="fa fa-heart outline-white"></i></Link>
 		</div>
       </div>

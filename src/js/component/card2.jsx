@@ -12,7 +12,7 @@ export const Card2 = (props) => {
         <p className="card-text">Population: {props.poblacion}</p>
         <p className="card-text">Terrain: {props.terreno}</p>
 		<div className="d-flex justify-content-between">
-		<Link type="button" className="btn btn-outline-primary" to={"/single/"+ id}>Learn More</Link>
+		<Link type="button" className="btn btn-outline-primary" to={"/singlePlanet/"+ id}>Learn More</Link>
 		<Link type="button" className="btn btn-outline-warning "><i className="fa fa-heart outline-white"></i></Link>
 		</div>
       </div>
