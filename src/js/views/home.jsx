@@ -38,9 +38,6 @@ export const Home = () => {
 		obtenerVehicles()
 	},[])
 	
-	function Favoritos(){
-		
-	}
 	return(
 	<div>
 	<div className="container">
