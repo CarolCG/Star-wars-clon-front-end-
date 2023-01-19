@@ -20,7 +20,7 @@ const{store, actions}=useContext(Context)
 					Favourites <span className="rounded-1 p-1 ">{store.favorites.length}</span>
 			</button>
 			<ul className="dropdown-menu">
-			{store.favorites.map((item, id)=><Link to={actions.obtenerCharacters2(item) + (item.url.match(/\d+/g))} className="dropdown-item float-start btnEliminar" key={id}>{item.name}{item.planeta}{item.vehiculo}<button type="button" className="btn border-0 float-end"  onClick={() => actions.eliminarFavorito(item)}><i className="fa fa-trash"></i></button></Link>)}
+			{store.favorites.map((item, id)=><li className="d-flex"><Link to={actions.obtenerCharacters2(item) + (item.url.match(/\d+/g))} className="dropdown-item float-start btnEliminar" key={id}>{item.name}{item.planeta}{item.vehiculo}</Link><button type="button" className="btn border-0 float-end"  onClick={() => actions.eliminarFavorito(item)}><i className="fa fa-trash"></i></button></li>)}
 			</ul>
 			</div>				
 {/* </Link> */}
