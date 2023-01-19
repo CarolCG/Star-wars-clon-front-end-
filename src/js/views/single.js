@@ -46,11 +46,11 @@ export const Single = props => {
 	return (
 		<>
 		<div className="container">
-		<div className="jumbotron w 75 mx-auto d-flex">
-			<img src={"https://starwars-visualguide.com/assets/img/characters/"+ (id) +".jpg"} className="mb-4" alt="Luke"style={{height:"300px", width:"300px"}}/>
+		<div className="jumbotron w-75 mx-auto d-flex">
+			<img src={"https://starwars-visualguide.com/assets/img/characters/"+ (id) +".jpg"} className="mb-4 border border-white rounded-3" alt="Luke"style={{height:"300px", width:"300px"}}/>
 			<div className="col mb-4">
-			<h5 className="display-4 text-end me-5 ms-4 mt-3">{store.detallesCharacters.name}</h5>
-			<p className="text-center p-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed quisquam illo rerum ullam quos quo magnam, ut saepe sit sapiente totam consequuntur facilis inventore sequi dolorem laboriosam reprehenderit corporis voluptate.</p>
+			<h5 className="display-4 text-center me-5 ms-4 mt-3 text-danger bg-white border border-danger"><strong>{store.detallesCharacters.name}</strong></h5>
+			<p className="text-center p-4 text-danger">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed quisquam illo rerum ullam quos quo magnam, ut saepe sit sapiente totam consequuntur facilis inventore sequi dolorem laboriosam reprehenderit corporis voluptate.</p>
 			</div>
 			<hr className="my-4 bg-danger" style={{height:"2px"}} />
 </div>

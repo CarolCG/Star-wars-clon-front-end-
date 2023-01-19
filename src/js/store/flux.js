@@ -98,6 +98,16 @@ const getState = ({
                     }))
                     .catch(err => console.error(err))
             },
+            obtenerCharacters2: (item) => {
+                let store = getStore()
+                if (item.url.includes("people")) {
+                    return "single/";
+                } else if (item.url.includes("planets")) {
+                    return "singlePlanet/"
+                } else {
+                    return "singleVehicle/"
+                }
+            },
 
 
             changeColor: (item) => {

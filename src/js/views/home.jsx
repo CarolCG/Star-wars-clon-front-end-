@@ -4,6 +4,7 @@ import "../../styles/home.css";
 import { Card } from "../component/card.jsx";
 import { Card2 } from "../component/card2.jsx";
 import { Card3 } from "../component/card3.jsx";
+import { Carrousel } from "../component/carrousel.jsx";
 import { Context } from "../store/appContext.js";
 
 export const Home = () => {
@@ -43,23 +44,25 @@ export const Home = () => {
 	console.log(store.vehicles)
 	return(
 	<div>
+		<Carrousel/>
+		<hr className="bg-dark"></hr>
 	<div className="container">
-	<h1 className="text-danger">Characters</h1>
+	<h1 className=" rounded-3 text-white text-center bg-danger border-white p-2 border border-2"><strong>Characters</strong></h1>
 	<div className="d-flex scrollable">
 	{store.characters.map((item, index)=><Card item={item} nombre={item.name} genero={item.gender} ojo={item.eye_color} pelo={item.hair_color} id={index} key={index}/>)}
 	</div>
 	</div>
 	<div className="container">
-		<h1 className="text-danger">Planets</h1>
+		<h1 className=" rounded-3 text-white text-center bg-danger border-white p-2 border border-2"><strong>Planets</strong></h1>
 		<div className="d-flex scrollable">
 	{store.planets.map((item, index)=><Card2 item={item} planeta={item.name} terreno={item.terrain} poblacion={item.population} id={index} key={index}/>)}
 	</div>
 
 	</div>
 	<div className="container">
-	<h1 className="text-danger">Vehicles</h1>
+	<h1 className=" rounded-3 text-white text-center bg-danger border-white p-2 border border-2"><strong>Vehicles</strong></h1>
 	<div className="d-flex scrollable">
-	{store.vehicles.map((item, index)=><Card3 item={item} vehiculo={item.name} creado={item.created} capacidad={item.cargo_capacity} consumo={item.consumables} id={index} key={index}/>)}
+	{store.vehicles.map((item, index)=><Card3 item={item} url={item.url} vehiculo={item.name} creado={item.created} capacidad={item.cargo_capacity} consumo={item.consumables} id={index} key={index}/>)}
 	</div>
 	</div>
 	</div>
