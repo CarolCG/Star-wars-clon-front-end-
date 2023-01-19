@@ -17,7 +17,7 @@ return (
         <p className="card-text text-center"><strong>Consumable: </strong>{props.consumo}</p>
         <p className="card-text text-center"><strong>Creado en:</strong> {props.creado}</p>
 		<div className="d-flex justify-content-between">
-		<Link type="button" className="btn btn-outline-danger" to={"/singleVehicle/"+ id}>Learn More</Link>
+		<Link type="button" className="btn btn-outline-danger" to={"/singleVehicle/"+ (item.url.match(/\d+/g))}>Learn More</Link>
 		<button type="button" className="btn btn-outline-light " onClick={()=>actions.agregarFavorito(item)}><i className={actions.changeColor(item)}></i></button>
 		</div>
       </div>
