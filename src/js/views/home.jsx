@@ -46,20 +46,20 @@ export const Home = () => {
 	<div className="container">
 	<h1 className="text-danger">Characters</h1>
 	<div className="d-flex scrollable">
-	{store.characters.map((item, index)=><Card nombre={item.name} genero={item.gender} ojo={item.eye_color} pelo={item.hair_color} id={index} key={index}/>)}
+	{store.characters.map((item, index)=><Card item={item} nombre={item.name} genero={item.gender} ojo={item.eye_color} pelo={item.hair_color} id={index} key={index}/>)}
 	</div>
 	</div>
 	<div className="container">
 		<h1 className="text-danger">Planets</h1>
 		<div className="d-flex scrollable">
-	{store.planets.map((item, index)=><Card2 planeta={item.name} terreno={item.terrain} poblacion={item.population} id={index} key={index}/>)}
+	{store.planets.map((item, index)=><Card2 item={item} planeta={item.name} terreno={item.terrain} poblacion={item.population} id={index} key={index}/>)}
 	</div>
 
 	</div>
 	<div className="container">
 	<h1 className="text-danger">Vehicles</h1>
 	<div className="d-flex scrollable">
-	{store.vehicles.map((item, index)=><Card3 vehiculo={item.name} creado={item.created} capacidad={item.cargo_capacity} consumo={item.consumables} id={index} key={index}/>)}
+	{store.vehicles.map((item, index)=><Card3 item={item} vehiculo={item.name} creado={item.created} capacidad={item.cargo_capacity} consumo={item.consumables} id={index} key={index}/>)}
 	</div>
 	</div>
 	</div>

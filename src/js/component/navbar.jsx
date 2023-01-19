@@ -17,10 +17,10 @@ const{store, actions}=useContext(Context)
 			{/* <Link to="/demo"> */}
 			<div className="dropdown">
 			<button className="btn btn-lg btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-					Favourites
+					Favourites <span className="bg-secondary rounded-1 p-1 ">{store.favorites.length}</span>
 			</button>
 			<ul className="dropdown-menu">
-			{store.favorites.map((item, id)=><li className="dropdown-item float-start btnEliminar" key={id}>{item.nombre}{item.planeta}{item.vehiculo}<button type="button" className="btn border-0 float-end"  onClick={() => actions.eliminarFavorito(item)}><i className="fa fa-trash"></i></button></li>)}
+			{store.favorites.map((item, id)=><li className="dropdown-item float-start btnEliminar" key={id}>{item.name}{item.planeta}{item.vehiculo}<button type="button" className="btn border-0 float-end"  onClick={() => actions.eliminarFavorito(item)}><i className="fa fa-trash"></i></button></li>)}
 			</ul>
 			</div>				
 {/* </Link> */}

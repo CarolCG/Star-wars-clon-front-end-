@@ -3,7 +3,7 @@ import {Link} from "react-router-dom"
 import { Context } from "../store/appContext";
 
 export const Card2 = (props) => {
-
+  let item=props.item
   const{actions}=useContext(Context)
 
   let id = parseInt(props.id)+1;
@@ -17,7 +17,7 @@ export const Card2 = (props) => {
         <p className="card-text">Terrain: {props.terreno}</p>
 		<div className="d-flex justify-content-between">
 		<Link type="button" className="btn btn-outline-primary" to={"/singlePlanet/"+ id}>Learn More</Link>
-		<button type="button" className="btn btn-outline-warning " onClick={()=>actions.agregarFavorito(props)}><i className="fa fa-heart outline-white"></i></button>
+		<button type="button" className="btn btn-outline-light " onClick={()=>actions.agregarFavorito(item)}><i className={actions.changeColor(item)}></i></button>
 		</div>
       </div>
     </div>

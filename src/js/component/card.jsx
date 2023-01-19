@@ -6,7 +6,7 @@ export const Card = (props) => {
 
   const{actions}=useContext(Context)
 
-
+let item=props.item
   let id = parseInt(props.id)+1;
 	return (
   <div className="col m-4">
@@ -19,7 +19,7 @@ export const Card = (props) => {
         <p className="card-text">Eyes Color: {props.ojo}</p>
 		<div className="d-flex justify-content-between">
 		<Link type="button" className="btn btn-outline-primary" to={"/single/"+ id}>Learn More</Link>
-		<button type="button" className="btn btn-outline-warning " onClick={()=>actions.agregarFavorito(props)}><i className="fa fa-heart outline-white"></i></button>
+		<button type="button" className="btn btn-outline-light " onClick={()=>actions.agregarFavorito(item)}><i className={actions.changeColor(item)}></i></button>
 		</div>
       </div>
     </div>
