@@ -16,6 +16,7 @@ const{store, actions}=useContext(Context)
 			</Link>
 			{/* <Link to="/demo"> */}
 			<div className="dropdown">
+			<button className="btn btn-lg btn btn btn-outline-light m-2">Log In</button>
 			<button className="btn btn-lg btn btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 					Favourites <span className="rounded-1 p-1 ">{store.favorites.length}</span>
 			</button>
