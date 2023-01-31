@@ -1,27 +1,40 @@
-import React, {useContext} from "react";
-import {Link} from "react-router-dom"
-import { Context } from "../store/appContext";
+import React, {useState, useContext} from "react";
+import {Context} from "../store/appContext.js";
+import {Navigate} from "react-router-dom"
 
-export const Form = (props) => {
+export const Form = () => {
 
 //   const{actions}=useContext(Context)
+const[email,setEmail]=useState("")
+const[password,setPassword]=useState("")
+const {store, actions}=useContext(Context)
 
+function enviarDatos(e) {
+    e.preventDefault()
+    actions.login(email,password)
+    setEmail("")
+    setPassword("")
+}
 	return (
-        <form>
-    <div className="mb-3">
-    <label for="exampleInputEmail1" className="form-label">Email address</label>
-    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
-    <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+        <>
+        {store.auth === true ? <Navigate to="/"/>:
+        <form  onSubmit={enviarDatos}>
+    <div className="container text-center my-4">
+    <label for="exampleInputEmail1" className="d-flex text-white ">Email address</label>
+    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value={email} onChange={(e)=>setEmail(e.target.value)}/>
     </div>
-    <div className="mb-3">
-    <label for="exampleInputPassword1" className="form-label">Password</label>
-    <input type="password" className="form-control" id="exampleInputPassword1"/>
+    <div className="container text-center my-4">
+    <label for="exampleInputPassword1" className="form-label text-white ">Password</label>
+    <input type="password" className="form-control" id="exampleInputPassword1" value={password} onChange={(e)=>setPassword(e.target.value)}/>
     </div>
-    <div className="mb-3 form-check">
-    <input type="checkbox" className="form-check-input" id="exampleCheck1"/>
-    <label className="form-check-label" for="exampleCheck1">Check me out</label>
+    <div className="container text-center my-4">
+    <button type="submit" className="btn btn-lg btn btn btn-outline-light ">Submit</button>
     </div>
-    <button type="submit" className="btn btn-primary">Submit</button>
 </form>
+}
+    
+</>
 	);
 };
+
+

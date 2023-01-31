@@ -1,11 +1,22 @@
 import React, {useContext} from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+import { useNavigate } from "react-router-dom"; 
 
 export const Navbar = (props) => {
 
 const{store, actions}=useContext(Context)
 // let item=props.item
+
+
+	const navigate = useNavigate()
+
+
+function handleLogout() {
+	actions.logout()//cerrar la sesion
+	navigate("/")//usamos navigate para redireccionar
+
+}
 //   let id = parseInt(props.id)+1;
 	return (
 		<div className="bg-danger ">
@@ -16,7 +27,10 @@ const{store, actions}=useContext(Context)
 			</Link>
 			{/* <Link to="/demo"> */}
 			<div className="dropdown">
-			<button className="btn btn-lg btn btn btn-outline-light m-2">Log In</button>
+			<Link to="/login">
+				<button className={"btn btn-lg btn btn btn-outline-light m-2 " +store.visually}>Log In</button>
+				</Link>
+				{store.auth === true? <button className={"btn btn-lg btn btn btn-outline-light m-2 "+ store.hide} onClick={handleLogout}>Logout</button> : null}
 			<button className="btn btn-lg btn btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
 					Favourites <span className="rounded-1 p-1 ">{store.favorites.length}</span>
 			</button>

@@ -23,6 +23,9 @@ const getState = ({
             detallesCharacters: {},
             detallesPlanets: {},
             detallesVehicles: {},
+            auth: false,
+            visually: "",
+            hide: "visually-hidden"
         },
         actions: {
             // Use getActions to call a function within a fuction
@@ -107,6 +110,46 @@ const getState = ({
                 } else {
                     return "singleVehicle/"
                 }
+            },
+            logout: () => {
+                localStorage.removeItem('token');
+                setStore({
+                    auth: false,
+                    visually: "",
+                    hide: "visually-hidden"
+                })
+            },
+            login: (userEmail, userPassword) => {
+                fetch('https://3000-carolcg-autenticacionap-z3ahjb1gtds.ws-us84.gitpod.io/login', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                            // 'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                        body: JSON.stringify({
+                            "email": userEmail,
+                            "password": userPassword
+                        }) // body data type must match "Content-Type" header
+                    })
+                    .then((response) => {
+                        console.log(response.status);
+                        if (response.status === 200) {
+                            setStore({
+                                auth: true,
+                                visually: "visually-hidden",
+                                hide: ""
+                            })
+                        }
+                        return response.json()
+                    })
+                    .then((data) => {
+                        console.log(data)
+                        if (data.msg === "Bad email or password") {
+                            alert(data.msg)
+                        }
+                        localStorage.setItem("token", data.access_token)
+                    })
+                    .catch((err) => console.log(err))
             },
 
 
