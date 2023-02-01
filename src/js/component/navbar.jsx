@@ -27,6 +27,9 @@ function handleLogout() {
 			</Link>
 			{/* <Link to="/demo"> */}
 			<div className="dropdown">
+				<Link to="/signup">
+				<button className={"btn btn-lg btn btn btn-outline-light m-2 " +store.visually}>Registrarse</button>
+				</Link>
 			<Link to="/login">
 				<button className={"btn btn-lg btn btn btn-outline-light m-2 " +store.visually}>Log In</button>
 				</Link>
