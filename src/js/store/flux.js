@@ -164,23 +164,31 @@ const getState = ({
                             "name": userName
                         }) // body data type must match "Content-Type" header
                     })
+                    // .then((response) => {
+                    //     console.log(response.status);
+                    //     if (response.status === 200) {
+                    //         setStore({
+                    //             auth: true,
+                    //             visually: "visually-hidden",
+                    //             hide: ""
+                    //         })
+                    //     }
+                    //     return response.json()
+                    // })
+                    // .then((data) => {
+                    //     console.log(data)
+                    //     if (data.msg === "Bad email or password") {
+                    //         alert(data.msg)
+                    //     }
+                    //     localStorage.setItem("token", data.access_token)
+                    // })
+                    // .catch((err) => console.log(err))
                     .then((response) => {
                         console.log(response.status);
-                        if (response.status === 200) {
-                            setStore({
-                                auth: true,
-                                visually: "visually-hidden",
-                                hide: ""
-                            })
-                        }
-                        return response.json()
+                        return response.json();
                     })
                     .then((data) => {
                         console.log(data)
-                        if (data.msg === "Bad email or password") {
-                            alert(data.msg)
-                        }
-                        localStorage.setItem("token", data.access_token)
                     })
                     .catch((err) => console.log(err))
             },

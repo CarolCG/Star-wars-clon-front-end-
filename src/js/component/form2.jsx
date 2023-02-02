@@ -7,6 +7,7 @@ export const Form2 = () => {
 //   const{actions}=useContext(Context)
 const[email,setEmail]=useState("")
 const[password,setPassword]=useState("")
+const[name, setName]=useState("")
 const {store, actions}=useContext(Context)
 
 function enviarDatos(e) {
@@ -14,6 +15,8 @@ function enviarDatos(e) {
     actions.login(email,password, name)
     setEmail("")
     setPassword("")
+    setName("")
+    
 }
 	return (
         <>
@@ -21,7 +24,7 @@ function enviarDatos(e) {
         <form  onSubmit={enviarDatos}>
             <div className="container text-center my-4">
     <label for="exampleInputEmail1" className="d-flex text-white ">Name</label>
-    <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value={name} onChange={(e)=>setEmail(e.target.value)}/>
+    <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value={name} onChange={(e)=>setName(e.target.value)}/>
     </div>
     <div className="container text-center my-4">
     <label for="exampleInputEmail1" className="d-flex text-white ">Email address</label>
