@@ -23,15 +23,15 @@ function enviarDatos(e) {
         {store.auth === true ? <Navigate to="/login"/>:
         <form  onSubmit={enviarDatos}>
             <div className="container text-center my-4">
-    <label for="exampleInputEmail1" className="d-flex text-white ">Name</label>
-    <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value={name} onChange={(e)=>setName(e.target.value)}/>
+    <label htmlFor="exampleInputEmail1" className="d-flex text-white ">Name</label>
+    <input type="text" className="form-control" id="exampleInputName" aria-describedby="emailHelp" value={name} onChange={(e)=>setName(e.target.value)}/>
     </div>
     <div className="container text-center my-4">
-    <label for="exampleInputEmail1" className="d-flex text-white ">Email address</label>
+    <label htmlFor="exampleInputEmail1" className="d-flex text-white ">Email address</label>
     <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value={email} onChange={(e)=>setEmail(e.target.value)}/>
     </div>
     <div className="container text-center my-4">
-    <label for="exampleInputPassword1" className="form-label text-white ">Password</label>
+    <label htmlFor="exampleInputPassword1" className="form-label text-white ">Password</label>
     <input type="password" className="form-control" id="exampleInputPassword1" value={password} onChange={(e)=>setPassword(e.target.value)}/>
     </div>
     <div className="container text-center my-4">
