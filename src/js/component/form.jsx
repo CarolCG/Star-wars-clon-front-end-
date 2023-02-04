@@ -11,7 +11,12 @@ const {store, actions}=useContext(Context)
 
 function enviarDatos(e) {
     e.preventDefault()
-    actions.login(email,password)
+    if (email != "" && password != "") {
+        actions.login(email,password)
+        } else {
+            alert("Faltan datos por completar")
+        }
+    // actions.login(email,password)
     setEmail("")
     setPassword("")
 }

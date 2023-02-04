@@ -120,19 +120,18 @@ const getState = ({
                 })
             },
             login: (userEmail, userPassword) => {
-                fetch('https://3000-carolcg-autenticacionap-z3ahjb1gtds.ws-us84.gitpod.io/login', {
-                        method: 'POST',
+                try {
+                    fetch('https://3000-carolcg-autenticacionap-4237h3gqret.ws-us85.gitpod.io/login', {
+                        method: "POST",
                         headers: {
-                            'Content-Type': 'application/json'
-                            // 'Content-Type': 'application/x-www-form-urlencoded',
+                            "Content-Type": "application/json"
                         },
                         body: JSON.stringify({
                             "email": userEmail,
                             "password": userPassword
-                        }) // body data type must match "Content-Type" header
-                    })
-                    .then((response) => {
-                        console.log(response.status);
+
+                        })
+                    }).then((response) => {
                         if (response.status === 200) {
                             setStore({
                                 auth: true,
@@ -141,56 +140,46 @@ const getState = ({
                             })
                         }
                         return response.json()
-                    })
-                    .then((data) => {
-                        console.log(data)
-                        if (data.msg === "Bad email or password") {
+                    }).then((data) => {
+                        localStorage.setItem("token", data.access_token)
+                        if (data.msg === "Bad username or password" || data.msg === "User does not exist") {
                             alert(data.msg)
                         }
-                        localStorage.setItem("token", data.access_token)
-                    })
-                    .catch((err) => console.log(err))
+                        console.log(data);
+                    });
+                    //
+                } catch (e) {
+                    console.log(e);
+                }
             },
-            // signup: (userEmail, userPassword, userName) => {
-            //     fetch('https://3000-carolcg-autenticacionap-th2tboav31j.ws-us85.gitpod.io/signup', {
-            //             method: 'POST',
-            //             headers: {
-            //                 'Content-Type': 'application/json'
-            //                 // 'Content-Type': 'application/x-www-form-urlencoded',
-            //             },
-            //             body: JSON.stringify({
-            //                 "email": userEmail,
-            //                 "password": userPassword,
-            //                 "name": userName
-            //             }) // body data type must match "Content-Type" header
-            //         })
-            //         // .then((response) => {
-            //         //     console.log(response.status);
-            //         //     if (response.status === 200) {
-            //         //         setStore({
-            //         //             auth: true,
-            //         //             visually: "visually-hidden",
-            //         //             hide: ""
-            //         //         })
-            //         //     }
-            //         //     return response.json()
-            //         // })
-            //         // .then((data) => {
-            //         //     console.log(data)
-            //         //     if (data.msg === "Bad email or password") {
-            //         //         alert(data.msg)
-            //         //     }
-            //         //     localStorage.setItem("token", data.access_token)
-            //         // })
-            //         // .catch((err) => console.log(err))
-            //         .then((response) => response.json())
-            //         .then((data) => {
-            //             console.log(data);
-            //         })
-            //         .catch((error) => {
-            //             console.error("Error:", error);
-            //         });
-            // },
+            signup: (email, name, password) => {
+                try {
+                    fetch('https://3000-carolcg-autenticacionap-4237h3gqret.ws-us85.gitpod.io/signup', {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({
+                            "email": email,
+                            "name": name,
+                            "password": password
+                        })
+                    }).then((response) => {
+                        if (response.status === 200) {
+                            alert("¡Usuario creado con exito!")
+                        }
+                        return response.json()
+                    }).then((data) => {
+                        if (data.msg === "User exist in the system") {
+                            alert(data.msg)
+                        }
+                        console.log(data);
+                    });
+                    //
+                } catch (e) {
+                    console.log(e);
+                }
+            },
 
 
             changeColor: (item) => {

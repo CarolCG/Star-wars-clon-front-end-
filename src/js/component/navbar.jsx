@@ -27,14 +27,13 @@ function handleLogout() {
 			</Link>
 			{/* <Link to="/demo"> */}
 			<div className="dropdown">
-				<Link to="/signup">
-				<button className={"btn btn-lg btn btn btn-outline-light m-2 " +store.visually}>Registrarse</button>
-				</Link>
+				<Link type="btn btn-lg" to={"/signup"} className={"btn btn-lg btn btn btn-outline-light m-2  " + store.visually}>Sign up</Link>
+
 			<Link to="/login">
 				<button className={"btn btn-lg btn btn btn-outline-light m-2 " +store.visually}>Log In</button>
 				</Link>
 				{store.auth === true? <button className={"btn btn-lg btn btn btn-outline-light m-2 "+ store.hide} onClick={handleLogout}>Logout</button> : null}
-			<button className="btn btn-lg btn btn btn-outline-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+			<button className={"btn btn-lg btn btn btn-outline-light dropdown-toggle " +store.hide} type="button" data-bs-toggle="dropdown" aria-expanded="false">
 					Favourites <span className="rounded-1 p-1 ">{store.favorites.length}</span>
 			</button>
 			<ul className="dropdown-menu">
