@@ -121,7 +121,7 @@ const getState = ({
             },
             login: (userEmail, userPassword) => {
                 try {
-                    fetch('https://3000-carolcg-autenticacionap-4237h3gqret.ws-us85.gitpod.io/login', {
+                    fetch('https://3000-carolcg-autenticacionap-pqdxf1afogk.ws-us85.gitpod.io/login', {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json"
@@ -154,7 +154,7 @@ const getState = ({
             },
             signup: (email, name, password) => {
                 try {
-                    fetch('https://3000-carolcg-autenticacionap-4237h3gqret.ws-us85.gitpod.io/signup', {
+                    fetch('https://3000-carolcg-autenticacionap-pqdxf1afogk.ws-us85.gitpod.io/signup', {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json"
@@ -166,7 +166,7 @@ const getState = ({
                         })
                     }).then((response) => {
                         if (response.status === 200) {
-                            alert("¡Usuario creado con exito!")
+                            alert("Usuario creado con exito!")
                         }
                         return response.json()
                     }).then((data) => {

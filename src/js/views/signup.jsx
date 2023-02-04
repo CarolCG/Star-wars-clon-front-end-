@@ -30,7 +30,7 @@ export const Signup = () => {
     
     // }
 
-return(<div className="container w-50 text-white mb-5">
+return(<><div className="container w-50 text-white mb-5">
 <h1 className="text-center text-danger border-bottom border-danger">SIGN UP</h1>
 
 {store.auth === true ? <Navigate to="/login"/>:
@@ -66,6 +66,7 @@ return(<div className="container w-50 text-white mb-5">
 </form>
 }
 </div>
+</>
 );
 
 };
